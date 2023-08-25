@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace X_O_game
 {
-    internal class Computer
+    internal class Game
     {
+        public static void xMark(string xMark)
+        {
+            if (xMark == "1")
+            {
+
+            }
+        }
     }
 }

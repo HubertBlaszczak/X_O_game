@@ -4,8 +4,9 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        int field = 5;
         Board board = new Board();
-        Board.drawBoard();
+        Board.drawBoardList(field);
         
     }
 }
