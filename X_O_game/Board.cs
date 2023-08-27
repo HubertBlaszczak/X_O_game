@@ -27,10 +27,10 @@ namespace X_O_game
                 Console.WriteLine();
             }
         }
-            public static void drawBoardList(int field)
+            public static void drawBoardList()
             {
                 List<string> elementNumber = new List<string>() { "1","2","3","4","5","6","7","8","9" };
-                elementNumber[field] = "x";
+                
             foreach (string element in elementNumber)
             {                               
                 Console.Write(" " + element + " ");
