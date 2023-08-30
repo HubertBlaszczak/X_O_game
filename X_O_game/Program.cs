@@ -1,31 +1,33 @@
-﻿using X_O_game;
+﻿using System.Linq.Expressions;
+using X_O_game;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
+
+        //StartGameMenu.whoPlay();
+        int whoPlay = StartGameMenu.whoPlay();
+        int startTurn = StartGameMenu.whoStart(whoPlay);
+
         List<string> elementNumber = new List<string>() { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-        Board board = new Board();
-        //Board.drawBoardList();
+        //Board board = new Board();
+        Board.drawBoardList(elementNumber);        
         Console.WriteLine();
-        int player = StartGameMenu.whoStart();
+        
+            //int fieldToChange;
+            bool game = true;
+        int playerTurn = startTurn;
 
-        for(int i = 0; i < elementNumber.Count; i++)
-        {
-            
+            while (game)
+            {
+                
+                playerTurn = MainGame.gameMethod(whoPlay, elementNumber, playerTurn);
+                game = EndGame.conditionOfEndGame(elementNumber, game, playerTurn);
 
-            Game.changeBoardList(2, elementNumber, Game.playerTurn(player));
-            if(player == 1)
-            {
-                player = 2;
-            }
-            else
-            {
-                player = 1;
-            }
+            //playerTurn = MainGame.changeTurn(whoPlay, playerTurn);
         }
 
-        
-        
+        return;
     }
 }

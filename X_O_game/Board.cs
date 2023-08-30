@@ -27,9 +27,13 @@ namespace X_O_game
                 Console.WriteLine();
             }
         }
-            public static void drawBoardList()
+
+            /// <summary>
+            /// method to draw start board
+            /// </summary>
+            public static void drawBoardList(List<string> elementNumber)
             {
-                List<string> elementNumber = new List<string>() { "1","2","3","4","5","6","7","8","9" };
+                //List<string> elementNumber = new List<string>() { "1","2","3","4","5","6","7","8","9" };
                 
             foreach (string element in elementNumber)
             {                               

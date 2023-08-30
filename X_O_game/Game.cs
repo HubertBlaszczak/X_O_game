@@ -1,49 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace X_O_game
 {
     internal class Game
-    {
-        
-        public static void changeBoardList(int field, List<string> elementNumber, int player)
+    {        
+        public static void changeBoardList(int field, List<string> elementNumber, int playerTurn)
         {
-            if (player == 1)
-            {
-                elementNumber[field] = "x";
-            }
-            else
-            {
-                elementNumber[field] = "y";
-            }
-            foreach (string element in elementNumber)
-            {
-                Console.Write(" " + element + " ");
-                if (elementNumber[2] == element || elementNumber[5] == element)
+            
+
+                if (playerTurn == 1)
                 {
-                    Console.WriteLine();
+                    elementNumber[field] = "x";
                 }
-
-
-            }
+                else
+                {
+                    elementNumber[field] = "o";
+                }
+                for (int i = 0; i < elementNumber.Count; i++)
+                {
+                    Console.Write(" " + elementNumber[i] + " ");
+                    if (i == 2 || i == 5)
+                    {
+                        Console.WriteLine();
+                    }
+                }
+            
+            
 
         }
-        public static int playerTurn( int playerTurn)
-        {
-                       
-            if (playerTurn == 1)
-            {
-                playerTurn = 1;
-            }
-            else
-            {
-                playerTurn = 2;
-            }
 
-            return playerTurn;
-        }
+
+        
+        
     }
 }
