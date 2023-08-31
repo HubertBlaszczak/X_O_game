@@ -26,7 +26,7 @@ namespace X_O_game
                 for (int i = 0; i < elementNumber.Count; i++)
                 {
                     Console.Write(" " + elementNumber[i] + " ");
-                    if (i == 2 || i == 5)
+                    if (i == 2 || i == 5 || i == 8)
                     {
                         Console.WriteLine();
                     }

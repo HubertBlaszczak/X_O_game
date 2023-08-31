@@ -8,7 +8,7 @@ namespace X_O_game
 {
     internal class EndGame
     {
-        public static bool conditionOfEndGame(List<string> elementNumber, bool game, int playerTurn)
+        public static bool conditionOfEndGame(List<string> elementNumber, int playerTurn)
         {
             if (playerTurn == 1)
             {
@@ -71,30 +71,49 @@ namespace X_O_game
             {
                 if (elementNumber[0] == "o" && elementNumber[1] == "o" && elementNumber[2] == "o")
                 {
-                    Console.WriteLine("Wygrał komputer, gratulacje ");
+                    Console.WriteLine("Wygrał komputer ");
                     return false;
                 }
                 else if (elementNumber[3] == "o" && elementNumber[4] == "o" && elementNumber[5] == "o")
                 {
-                    Console.WriteLine("Wygrał komputer, gratulacje ");
+                    Console.WriteLine("Wygrał komputer ");
                     return false;
                 }
                 else if (elementNumber[6] == "o" && elementNumber[7] == "o" && elementNumber[8] == "o")
                 {
-                    Console.WriteLine("Wygrał komputer, gratulacje ");
+                    Console.WriteLine("Wygrał komputer ");
                     return false;
                 }
                 else if (elementNumber[0] == "o" && elementNumber[4] == "o" && elementNumber[8] == "o")
                 {
-                    Console.WriteLine("Wygrał komputer, gratulacje ");
+                    Console.WriteLine("Wygrał komputer ");
                     return false;
                 }
                 else if (elementNumber[2] == "o" && elementNumber[4] == "o" && elementNumber[6] == "o")
                 {
-                    Console.WriteLine("Wygrał komputer, gratulacje ");
+                    Console.WriteLine("Wygrał komputer ");
                     return false;
                 }
+
             }
+            List<bool> listOfOccupiedFields = new List<bool>(new bool[elementNumber.Count]);
+            for (int i = 0; i < elementNumber.Count; i++)
+            {
+                if (elementNumber[i] == "x" || elementNumber[i] == "o")
+                {
+                    listOfOccupiedFields[i] = true;
+                }
+                else
+                {
+                    listOfOccupiedFields[i] = false;
+                }
+            }
+            if(listOfOccupiedFields.TrueForAll(x => x == true))
+            {
+                Console.WriteLine("Koniec gry, remis. ");
+                return false;
+            }
+            
             return true;
         }
     }
