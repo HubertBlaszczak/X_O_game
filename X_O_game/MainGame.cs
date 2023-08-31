@@ -27,7 +27,7 @@ namespace X_O_game
                         {
                             if (int.TryParse(elementNumber[fieldToChange - 1], out int result))
                             {
-                                Game.changeBoardList(fieldToChange - 1, elementNumber, playerTurn);
+                                changeBoardList(fieldToChange - 1, elementNumber, playerTurn);
                                 game = EndGame.conditionOfEndGame(elementNumber, playerTurn);
                                 if (game == true)
                                 {
@@ -60,7 +60,7 @@ namespace X_O_game
                         {
                             if (int.TryParse(elementNumber[fieldToChange - 1], out int result))
                             {
-                                Game.changeBoardList(fieldToChange - 1, elementNumber, playerTurn);
+                                changeBoardList(fieldToChange - 1, elementNumber, playerTurn);
                                 game = EndGame.conditionOfEndGame(elementNumber, playerTurn);
                                 if (game == true)
                                 {
@@ -93,7 +93,7 @@ namespace X_O_game
                             if (int.TryParse(elementNumber[fieldToChange - 1], out int result))
                             {
                                 Console.WriteLine("Komputer wybrał pole: " + fieldToChange);
-                                Game.changeBoardList(fieldToChange - 1, elementNumber, playerTurn);
+                                changeBoardList(fieldToChange - 1, elementNumber, playerTurn);
                                 game = EndGame.conditionOfEndGame(elementNumber, playerTurn);
                                 if (game == true)
                                 {
@@ -139,7 +139,27 @@ namespace X_O_game
                 return playerTurn;
 
             }
-        }   
+        public static void changeBoardList(int field, List<string> elementNumber, int playerTurn)
+        {
+            if (playerTurn == 1)
+            {
+                elementNumber[field] = "x";
+            }
+            else
+            {
+                elementNumber[field] = "o";
+            }
+            for (int i = 0; i < elementNumber.Count; i++)
+            {
+                Console.Write(" " + elementNumber[i] + " ");
+                if (i == 2 || i == 5 || i == 8)
+                {
+                    Console.WriteLine();
+                }
+            }
+        }
+    }   
+        
         
 
     }

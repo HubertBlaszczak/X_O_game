@@ -18,7 +18,7 @@ namespace X_O_game
                 foreach (string element in elementNumber)
                 {                               
                     Console.Write(" " + element + " ");
-                    if (elementNumber[2] == element || elementNumber[5] == element)
+                    if (elementNumber[2] == element || elementNumber[5] == element || elementNumber[8] == element)
                         {
                             Console.WriteLine();
                         }        
